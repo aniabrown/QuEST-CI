@@ -1,11 +1,12 @@
 pipeline {
-    agent { 
-        dockerfile { 
-            filename 'Dockerfile.build1'
-        } 
-    }
+    agent none
     stages {
         stage('build') {
+            agent { 
+            dockerfile { 
+                filename 'Dockerfile.build1'
+            } 
+ 
             steps {
                 sh 'echo "TEST"'
                 sh 'python3 --version'
