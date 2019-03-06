@@ -11,7 +11,6 @@ pipeline {
             steps {
                 sh 'echo "TEST"'
                 sh 'ls'
-                sh 'mkdir build'
                 sh 'cd build'
                 sh 'cmake ..'
                 sh 'VERBOSE=TRUE make'
