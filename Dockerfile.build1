@@ -1,4 +1,4 @@
 FROM ubuntu:bionic
 
 RUN apt-get update
-RUN apt-get -y install cmake
+RUN apt-get install -y cmake
