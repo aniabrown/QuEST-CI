@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('build') {
             agent { 
-            dockerfile { 
-                filename 'Dockerfile.build1'
-            } 
+                dockerfile { 
+                    filename 'Dockerfile.build1'
+                } 
+            }
  
             steps {
                 sh 'echo "TEST"'
