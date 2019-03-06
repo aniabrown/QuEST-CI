@@ -8,7 +8,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo "TEST"'
-                sh 'python --version'
+                sh 'python3 --version'
                 sh 'ls'
                 sh 'mkdir build'
                 sh 'cd build'
