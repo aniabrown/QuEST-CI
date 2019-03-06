@@ -8,6 +8,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'echo "TEST"'
                 sh 'python --version'
                 sh 'cd build'
                 sh 'cmake ..'
