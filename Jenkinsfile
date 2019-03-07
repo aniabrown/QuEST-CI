@@ -5,6 +5,7 @@ pipeline {
             agent { 
                 dockerfile { 
                     filename 'Dockerfile.build1'
+                    additionalBuildArgs '--no-cache'
                 } 
             }
  
