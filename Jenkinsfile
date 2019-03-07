@@ -13,6 +13,7 @@ pipeline {
                 sh 'echo "TEST"'
                 sh 'ls'
                 sh 'pwd'
+                sh 'rm -r CMakeCache.txt CMakeFiles cmake_install.cmake'
                 sh 'cp examples/tutorial_example.c .'
                 dir('build'){
                     writeFile file:'dummy', text:''
