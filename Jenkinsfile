@@ -23,6 +23,7 @@ pipeline {
             steps {
                 sh 'ls'
                 sh 'pwd'
+                sh 'cd build; ./demo'
                 sh 'cd build; make tests'
             }
         }
