@@ -12,7 +12,9 @@ pipeline {
                 sh 'echo "TEST"'
                 sh 'ls'
                 sh 'pwd'
-                dir('build')
+                dir('build'){
+                    writeFile file:'dummy', test:''
+                }
                 sh 'cd build; cmake ..'
                 sh 'VERBOSE=TRUE make'
             }
