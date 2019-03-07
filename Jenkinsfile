@@ -1,13 +1,12 @@
 pipeline {
-    agent none
+    agent { 
+        dockerfile { 
+            filename 'Dockerfile.build1'
+            args '--rm'
+        } 
+    }
     stages {
         stage('build') {
-            agent { 
-                dockerfile { 
-                    filename 'Dockerfile.build1'
-                    additionalBuildArgs '--no-cache --rm'
-                } 
-            }
  
             steps {
                 sh 'ls'
@@ -21,13 +20,6 @@ pipeline {
             }
         }
         stage('test') {
-            agent { 
-                dockerfile { 
-                    filename 'Dockerfile.build1'
-                    additionalBuildArgs '--no-cache --rm'
-                } 
-            }
- 
             steps {
                 sh 'ls'
                 sh 'pwd'
