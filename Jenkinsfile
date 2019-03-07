@@ -2,7 +2,7 @@ pipeline {
     agent { 
         dockerfile { 
             filename 'Dockerfile.build1'
-            args '--rm'
+            args '-u root --rm'
         } 
     }
     stages {
