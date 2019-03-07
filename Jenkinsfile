@@ -10,7 +10,6 @@ pipeline {
             }
  
             steps {
-                sh 'echo "TEST"'
                 sh 'ls'
                 sh 'pwd'
                 sh 'cp examples/tutorial_example.c .'
@@ -21,6 +20,21 @@ pipeline {
                 sh 'cd build; VERBOSE=TRUE make'
             }
         }
+        stage('test') {
+            agent { 
+                dockerfile { 
+                    filename 'Dockerfile.build1'
+                    additionalBuildArgs '--no-cache --rm'
+                } 
+            }
+ 
+            steps {
+                sh 'ls'
+                sh 'pwd'
+                sh 'cd build; make tests'
+            }
+        }
+
     }
 }
 
