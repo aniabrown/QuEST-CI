@@ -12,7 +12,8 @@ pipeline {
                 sh 'echo "TEST"'
                 sh 'ls'
                 sh 'pwd'
-                sh 'mkdir build; cd build; cmake ..'
+                dir('build')
+                sh 'cd build; cmake ..'
                 sh 'VERBOSE=TRUE make'
             }
         }
