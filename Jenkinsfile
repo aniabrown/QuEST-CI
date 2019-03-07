@@ -18,7 +18,7 @@ pipeline {
                     writeFile file:'dummy', text:''
                 }
                 sh 'cd build; cmake ..'
-                sh 'VERBOSE=TRUE make'
+                sh 'cd build; VERBOSE=TRUE make'
             }
         }
     }
